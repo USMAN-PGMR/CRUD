@@ -1,0 +1,48 @@
+$dark: #003554;
+$primary:#124559;
+$danger:#778da9;
+// $ofwhite:#fbfefb;
+$success:#16db65;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+main{
+    flex: 1 0 auto;
+}
+.btn1{
+    color: #fbfefb;
+    border-color:$danger ;
+}
+.btn1:hover{
+    color:$primary;
+    outline: none;
+    background-color: #c2dfe3;
+    border-color: #fbfefb;
+    // border-top: #001d3d;
+    // border-style: dotted;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.btn2{
+background-color: #5dd39e;
+border: none;
+color: #124559;
+border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.btn2:hover{
+    box-shadow: 4px 4px 6px #000000;
+    border-radius: 30px;
+    color: #fbfefb;
+}
+// h3{
+//     border-bottom: #000000;
+//     outline-offset: 1rem;
+// }

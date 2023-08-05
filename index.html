@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- link bootstrap -->
+     <link rel="stylesheet" href="style/style.css">
+     <!-- Toastify -->
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+
+    <title>JS 10</title>
+   
+</head>
+<body >
+    <header class="text-white">
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container">
+              <a class="navbar-brand fs-4" style="font-family: cursive;text-shadow: 2px 3px 4px white" href="#">CRUD</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+    </header>
+    <main class="py-4">
+        <div class="container">
+            <div class="row text-center pb-4 pt-2">
+                <h3 style="font-family: sansaric;text-shadow: 2px 3px 3px ">Crud Operation</h3>
+                <!-- <hr style="width: 20px;display: inline-block;vertical-align: middle;" class="text-center"> -->
+                <!-- <p style="text-shadow: 2px 6px 19px;line-height: 0.7em">&nbsp;__________________</p> -->
+                <!-- <p style="margin-top:1rem"></p> -->
+            </div>
+            <div class="row" style="font-family: cursive">
+                <div class="col-12 col-md-6">
+                    <div  class="card  p-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn1 btn-danger btn-outline-primary fw-bold  w-100" onclick="handleCreate()" id="create">Create User</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn1 btn-danger btn-outline-primary fw-bold w-100" onclick="handleRead()" id="read">Read User</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-6">
+                                <button class="btn btn1 btn-danger btn-outline-primary fw-bold w-100 " onclick="handleUpdate()" id="update">Update User</button>
+                            </div>
+                            <div class="col-6">
+                                <button class=" btn btn1 btn-danger btn-outline-primary fw-bold w-100" onclick="handleDelete()" id="delete">Delete User</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+                <div class="col-12 col-md-6 ">
+                    <div class="card p-3 mt-4 mt-md-0">
+                        <form onsubmit="handleCreate()">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <input type="text" id="name" class="form-control" placeholder="Name">
+                                    <!-- <button class="btn btn-dark w-100">click me</button> -->
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input type="text" id="city" class="form-control mt-2 mt-md-0" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12 col-md-6">
+                                    <input type="text" id="country" class="form-control" placeholder="Country">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <!-- <button class="btn btn-success w-100">Add User</button> -->
+                                    <input type="submit" class="btn btn2 btn-outline-success fw-bold w-100 mt-2 mt-md-0" value="Add User">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            
+                </div>
+                
+            </div>
+        </div>
+        <div class="container mt-4 pt-4">
+            <div class="row text-center">
+                <div class="h4" style="font-family: sansaric;text-shadow: 2px 3px 3px;">Output</div>
+                <!-- <p style="line-height: 0.6em;text-shadow: 2px 3px 3px">&nbsp;&nbsp;&nbsp;______</p> -->
+            </div>
+            <div class="row p-2 text-center">
+                <div style="min-height: 120px;text-align: center;" class="mt-2 text-center card">
+                    <div class="pt-3" id="output"></div>
+                </div>
+            </div>
+        </div>
+       
+    </main>
+    <footer class=" bg-dark text-white text-center  ">
+<p class="pt-2 font-monospace">&copy;<Span id="year"></Span> Powered By M.usman Ali</p>
+    </footer>
+    <!-- bootstrap js -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- custom js -->
+    <script src="./js/script.js"></script>
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>
